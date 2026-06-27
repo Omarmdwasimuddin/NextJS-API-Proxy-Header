@@ -1,6 +1,6 @@
 ## NextJS API---> Working With Request Header In Proxy
 
-###
+### Get header properties value.
 ![](https://imgur.com/icCqQ3x.png)
 ![](https://imgur.com/gubrNX5.png)
 
