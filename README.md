@@ -39,3 +39,40 @@ export async function GET(request:NextRequest) {
 }
 ```
 ---
+
+###
+![](https://imgur.com/HUZCy5E.png)
+
+```bash
+import { NextRequest, NextResponse } from "next/server";
+
+
+export function proxy(request: NextRequest) {
+    if (request.nextUrl.pathname.startsWith('/api')) {
+        const requestHeader = new Headers(request.headers);
+        requestHeader.set('user_id','001135');
+
+        return NextResponse.next(
+            { request: { headers:requestHeader } }
+        );
+    }
+}
+```
+
+```bash
+import { headers } from "next/headers";
+import { NextResponse, NextRequest } from "next/server";
+
+
+export async function GET(request:NextRequest) {
+
+    const headerList = headers();
+    const userId = (await headerList).get('user_id');
+
+    return NextResponse.json(
+        {status: "success", message: userId},
+        {status: 200}
+    )
+}
+```
+---
