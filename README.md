@@ -40,7 +40,7 @@ export async function GET(request:NextRequest) {
 ```
 ---
 
-###
+### Set header properties value.
 ![](https://imgur.com/HUZCy5E.png)
 
 ```bash
